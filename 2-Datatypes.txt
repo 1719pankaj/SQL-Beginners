@@ -1,0 +1,16 @@
+ -- INT - Whole numbers and negetive whole numbers
+ -- FLOAT - Decimals with rounding 
+ -- Decimal(M,D) - Decimal numbers Precise
+ 
+ -- CHAR(N) - Fixed length characters (exactly N)
+ -- VARCHAR(N) - Varying length characters (less than N)
+ -- ENUM('M','F') - Value from a defined list
+ -- BOOLEAN - True or False values
+ 
+ -- DATE - Date(YYYY-MM-DD)
+ -- DATETIME - Date and time(YYYY-MM-DD HH-MM-SS)
+ -- TIME - Time(HHH-MM-SS)
+ -- YEAR - Year(YYYY)
+ 
+ 
+ 
