@@ -1,0 +1,65 @@
+ -- Normalization
+ 
+-- Normalization is the process of efficently organising data in a database
+	To eleminate redundancy
+    To only store related data in a table
+    
+-- Benifit of Normalization
+	Reduce storage space req
+    Reduce insert, update and deletion anomalies.
+    Improve query performance
+
+-- 1NF
+	No repeated Rows of data
+    Columns only contain a single value
+    The table has a primary key
+
+-- 2NF
+	The table confirms to 1NF
+    All the columns that are not a primary key depend on the whole primary key
+    
+    NAME* | SUBJECT* | GRADE | AGE  
+		Let's say Name and Subject are PKs in the above table
+		Grade depends on both NAME* and SUBJECT* cebause, you can' just have the grade of a student, 
+        you need the grade of a student in a given subject.
+		But AGE is independent of SUBJECT* 
+		Hence this table is not in 2NF
+						
+	NAME* | SUBJECT* | GRADE				NAME* | AGE
+	Now these are 2 distinct tables and you can bet your brown ass they are both in 2NF
+
+-- 3NF 
+	The table confirms to 2NF
+    All columns that are not a primary key only depnd on the whole primary key
+    i.e. It does not depend on any other column that is not a primary key
+
+	SUBJECT* | YEAR* | STAR PUPIL | STAR PUPIL DOB
+		This looks 2NF to me, you need both subject and year to get the name and also their DOB
+        But the DOB also kinda depends on the STAR PUPIL column
+        This is a dodgy kinda example because you can get DOB from PKs and that makes it 2NF
+        But you can also get it from the non PK STAR PUPIL column.
+        
+	SUBJECT* | YEAR* | STAR PUPIL					STAR PUPIL* | STAR PUPIL DOB
+    All we did was take out the ambiguity from the table and you bet can bet your smooth brown bottom on this being 3NF
+    
+    -- RELATIONSHIP
+    -- ONE to ONE
+		Where a key to one table appears no more than once as the key to another table and vice-versa.
+	-- ONE to MANY
+		Where the primary key of one table can be in multiple rows of a foreign key column of another table.
+		eg- The customer ID appears many a times in the orders table
+	-- MANY to MANY
+		Where two tables can have many instances of each other.
+	
+-- CONSTRAINTS
+	NOT NULL - Can't ne null
+    UNIQUE - Has to be unique no duplicates
+    PRIMARY KEY - A column that uniquely defines each row
+    FOREIGN KEY - A column which is related to a primary key in another table
+    CHECK - Check the vales (say an IMDB rating can't be above 10 and less than 0)
+    DEFAULT - Defalult value in case nothing is entered
+                        
+                        
+                        
+                        
+                        
