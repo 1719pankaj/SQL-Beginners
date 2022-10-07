@@ -50,6 +50,14 @@
 		eg- The customer ID appears many a times in the orders table
 	-- MANY to MANY
 		Where two tables can have many instances of each other.
+-- BCNF(Boyce CoddNormal Form)
+	The first condition for the table to be in Boyce Codd Normal Form is that the table should be in the third normal form.
+	
+	Secondly, every Right-Hand Side (RHS) attribute of the functional dependencies should depend on the super key of that particular table.
+	
+	For example-
+		You have a functional dependency X → Y. In the particular functional dependency, X has to be the part of the super key of the provided table.
+	
 	
 -- CONSTRAINTS
 	NOT NULL - Can't ne null
